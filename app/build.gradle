@@ -9,6 +9,7 @@ application {
 
 compileJava {
     options.release = 17
+
 }
 
 group = 'hexlet.code'
