@@ -8,10 +8,9 @@ import picocli.CommandLine.Parameters;
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff",
         description = "Compares two configuration files and shows a difference.")
 
-public final class App implements Callable<Integer> {
-        private static final int SUCCESS_EXIT_CODE = 0;
-        private static final int ERROR_EXIT_CODE = 1;
-
+        public final class App implements Callable<Integer> {
+                private static final int SUCCESS_EXIT_CODE = 0;
+                private static final int ERROR_EXIT_CODE = 1;
 
                 @Parameters(paramLabel = "filepath1", index = "0", description = "path to first file")
                 private String filePath1;
