@@ -38,7 +38,7 @@ import picocli.CommandLine.Parameters;
                                         return ERROR_EXIT_CODE;
                                 }
                                 return SUCCESS_EXIT_CODE;
+                        }
                 }
-        }
 
 
