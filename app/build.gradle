@@ -2,10 +2,16 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 application {
     mainClass = 'hexlet.code.App'
+}
+
+jacoco {
+    toolVersion = "0.8.8"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
 }
 
 compileJava {
@@ -37,14 +43,21 @@ test {
     useJUnitPlatform()
 }
 
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
 checkstyle {
     toolVersion '9.2.1'
 }
 
 checkstyleMain {
-    source ='src/main/java'
+    source ='app/src/main/java'
 }
 
 checkstyleTest {
-    source ='src/test/java'
+    source ='app/src/test/java'
 }
