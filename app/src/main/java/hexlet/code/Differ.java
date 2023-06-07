@@ -33,16 +33,16 @@ public class Differ {
 
         String result = "{\n";
         for (String key : keysFromFile) {
-            if (!file1.containsKey(key)) {
-                result = result + String.format("   +" + key + ": " + file2.get(key)) + "\n";
-            } else if (!file2.containsKey(key)) {
-                result = result + String.format("   -" + key + ": " + file1.get(key)) + "\n";
-            } else if (Objects.equals(file1.get(key), file2.get(key))) {
-                result = result + String.format("    " + key + ": " + file2.get(key)) + "\n";
-            } else if (!Objects.equals(file1.get(key), file2.get(key))) {
-                result = result + String.format("   -" + key + ": " + file1.get(key)) + "\n";
+            if (file1.containsKey(key) && file2.containsKey(key) && file1.get(key).equals(file2.get(key))) {
+                result += String.format("    "  + key + ": " + file1.get(key)) + "\n";
+            } else if (file1.containsKey(key) && file2.containsKey(key) && !file1.get(key).equals(file2.get(key))) {
+                result += String.format("   -" + key + ": " + file1.get(key) + "\n" + "   +" + key + ": " + file2.get(key)) + "\n";
+            } else if (!file1.containsKey(key)) {
+                result += String.format("   +" + key + ": " + file2.get(key)) + "\n";
+            } else {
+                result += String.format("   -" + key + ": " + file1.get(key)) + "\n";
             }
         }
-        return result;
+        return result + "}";
     }
 }

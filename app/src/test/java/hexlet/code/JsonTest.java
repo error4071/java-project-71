@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.Differ;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.nio.file.Files;
@@ -10,12 +11,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class JsonTest {
 
-    private String File1;
-    private String File2;
-    private String correctResult;
+    private static String File1;
+    private static String File2;
+    private static String correctResult;
 
-    @BeforeEach
-    public void beforeEach() throws Exception {
+    @BeforeAll
+    public static void beforeAll() throws Exception {
 
         File1 = "./src/test/resources/file1.json";
         File2 = "./src/test/resources/file2.json";
