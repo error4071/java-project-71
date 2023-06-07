@@ -26,7 +26,7 @@ public class Differ {
         return Differ.generate(file1, file2);
     }
 
-    public static String generate (Map < String, Object > file1, Map < String, Object > file2) throws Exception {
+    public static String generate(Map <String, Object> file1, Map <String, Object> file2) throws Exception {
 
         Set<String> keysFromFile = new TreeSet<>(file1.keySet());
         keysFromFile.addAll(file2.keySet());
