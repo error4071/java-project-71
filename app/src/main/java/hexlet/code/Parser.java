@@ -1,28 +1,26 @@
 package hexlet.code;
 
-import hexlet.code.Differ;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class JsonTest {
+public class Parser {
 
-    private static String File1;
-    private static String File2;
+    private static String FileYml1;
+    private static String FileYml2;
     private static String correctResult;
 
     @BeforeAll
     public static void beforeAll() throws Exception {
 
-        File1 = "./src/test/resources/file1.json";
-        File2 = "./src/test/resources/file2.json";
+        FileYml1 = "./src/test/resources/file1.yml";
+        FileYml2 = "./src/test/resources/file2.yml";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
 
-        String result = Differ.generate(File1, File2);
+        String result = Differ.generate(FileYml1, FileYml2);
         assertThat(result).isEqualTo(correctResult);
     }
 }
