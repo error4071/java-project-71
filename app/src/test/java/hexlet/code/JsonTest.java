@@ -9,8 +9,8 @@ import java.nio.file.Paths;
 
 public class JsonTest {
 
-    @BeforeAll
-    public static void beforeAll() throws Exception {
+    @Test
+    public static void jsonTest() throws Exception {
 
         String File1 = "./src/test/resources/file1.json";
         String File2 = "./src/test/resources/file2.json";
