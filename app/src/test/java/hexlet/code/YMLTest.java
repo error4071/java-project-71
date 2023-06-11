@@ -18,10 +18,7 @@ public class YMLTest {
         File1yml = "./src/test/resources/file1.yml";
         File2yml = "./src/test/resources/file2.yml";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
-    }
-
-    @Test
-    public void ymlTest() throws Exception {
+  
         String result = Differ.generate(File1yml, File2yml);
         assertThat(result).isEqualTo(correctResult);
     }
