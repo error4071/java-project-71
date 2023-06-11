@@ -1,13 +1,9 @@
 package hexlet.code;
 
-import hexlet.code.Differ;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class JsonTest {
 

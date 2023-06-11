@@ -1,20 +1,16 @@
 package hexlet.code;
 
-import org.junit.jupiter.api.BeforeAll;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class Parser {
 
-    private static String FileYml1;
-    private static String FileYml2;
-    private static String correctResult;
+    public static void testYML() throws Exception {
 
-    @BeforeAll
-    public static void beforeAll() throws Exception {
+        String FileYml1;
+        String FileYml2;
+        String correctResult;
 
         FileYml1 = "./src/test/resources/file1.yml";
         FileYml2 = "./src/test/resources/file2.yml";
