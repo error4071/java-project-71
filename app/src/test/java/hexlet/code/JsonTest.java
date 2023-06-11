@@ -1,16 +1,13 @@
 package hexlet.code;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class JsonTest {
-
     @Test
-    public static void jsonTest() throws Exception {
+    public void jsonTest() throws Exception {
 
         String File1 = "./src/test/resources/file1.json";
         String File2 = "./src/test/resources/file2.json";
