@@ -8,7 +8,6 @@ import java.nio.file.Paths;
 public class JsonTest {
     @Test
     public void jsonTest() throws Exception {
-
         String File1 = "./src/test/resources/file1.json";
         String File2 = "./src/test/resources/file2.json";
         String correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
