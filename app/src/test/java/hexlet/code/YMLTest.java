@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class YMLTest {
-
     private static String File1yml;
     private static String File2yml;
     private static String correctResult;
@@ -19,7 +18,6 @@ public class YMLTest {
     }
     @Test
     public void ymlTest() throws Exception {
-
         String result = Differ.generate(File1yml, File2yml);
         assertThat(result).isEqualTo(correctResult);
     }
