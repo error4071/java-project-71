@@ -14,7 +14,7 @@ public class JsonTest {
     public static void beforeAll() throws Exception {
         File1 = "./src/test/resources/file1.json";
         File2 = "./src/test/resources/file2.json";
-        correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
+        correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));  
     }
     @Test
     public void jsonTest() throws Exception {
