@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 public class JsonTest {
     private static String File1;
-    private static String File2;
+    private static String File2; 
     private static String correctResult;
     @BeforeAll
     public static void beforeAll() throws Exception {
