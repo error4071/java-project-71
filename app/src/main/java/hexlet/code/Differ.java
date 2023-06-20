@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Differ {
-    public static String generate(String filePath1, String filePath2) throws Exception {
+    public static String generate(String filePath1, String filePath2, String format ) throws Exception {
 
         Path getFile1 = Paths.get(filePath1);
         Path getFile1Location = getFile1.toAbsolutePath().normalize();
