@@ -11,17 +11,17 @@ public class JsonTest {
     private static String File1;
     private static String File2;
     private static String correctResult;
-    private static String format;
+    private static String defaultFormat;
     @BeforeAll
     public static void beforeAll() throws Exception {
         File1 = "./src/test/resources/file1.json";
         File2 = "./src/test/resources/file2.json";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
-        format = "stylish";
+        defaultFormat = "stylish";
     }
     @Test
     public void jsonTest() throws Exception {
-        String result = Differ.generate(File1, File2, format);
+        String result = Differ.generate(File1, File2, defaultFormat);
         assertThat(result).isEqualTo(correctResult);
     }
 }

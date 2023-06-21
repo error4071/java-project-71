@@ -11,17 +11,17 @@ public class YMLTest {
     private static String File1yml;
     private static String File2yml;
     private static String correctResult;
-    private static String format;
+    private static String defaultFormat;
     @BeforeAll
     public static void beforeAll() throws Exception {
         File1yml = "./src/test/resources/file1.yml";
         File2yml = "./src/test/resources/file2.yml";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
-        format = "stylish";
+        defaultFormat = "stylish";
     }
     @Test
     public void ymlTest() throws Exception {
-        String result = Differ.generate(File1yml, File2yml, format);
+        String result = Differ.generate(File1yml, File2yml, defaultFormat);
         assertThat(result).isEqualTo(correctResult);
     }
 }
