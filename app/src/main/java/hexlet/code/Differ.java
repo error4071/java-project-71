@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -36,13 +37,13 @@ public class Differ {
 
         String result = "{\n";
         for (String key : keysFromFile) {
-            if (file1.containsKey(key) && file2.containsKey(key) && file1.get(key).equals(file2.get(key))) {
+            if (!file1.containsKey(key)) {
                 result += String.format("     "  + key + ": " + file1.get(key)) + "\n";
-            } else if (file1.containsKey(key) && file2.containsKey(key) && !file1.get(key).equals(file2.get(key))) {
+            } else if (!file2.containsKey(key)) {
                 result += String.format("   - " + key + ": " + file1.get(key) + "\n" + "   + " + key + ": " + file2.get(key)) + "\n";
-            } else if (!file1.containsKey(key)) {
+            } else if (Objects.equals(file1.get(key), file2.get(key))) {
                 result += String.format("   + " + key + ": " + file2.get(key)) + "\n";
-            } else {
+            } else if (!Objects.equals(file1.get(key), file2.get(key))) {
                 result += String.format("   - " + key + ": " + file1.get(key)) + "\n";
             }
         }
