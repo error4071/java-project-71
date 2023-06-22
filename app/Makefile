@@ -1,5 +1,5 @@
 run-dist:	
-	./build/install/app/bin/app src/test/resources/file1.yml src/test/resources/file2.yml
+	./build/install/app/bin/app src/test/resources/file1.json src/test/resources/file2.json
 
 .DEFAULT_GOAL := build-run
 
@@ -29,7 +29,6 @@ lint:
 
 update-deps:
 	./gradlew useLatestVersions
-
 
 build-run: build run
 
