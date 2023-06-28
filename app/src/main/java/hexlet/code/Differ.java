@@ -43,7 +43,7 @@ public class Differ {
                 result += String.format("   + " + key + ": " + file2.get(key)) + "\n";
             } else if (!Objects.equals(file1.get(key), file2.get(key))) {
                 result += String.format("   - " + key + ": " + file1.get(key) + "\n" + "   + " + key + ": " + file2.get(key)) + "\n";
-            } else  {
+            } else {
                 result += String.format("     " + key + ": " + file1.get(key)) + "\n";
             }
         }
