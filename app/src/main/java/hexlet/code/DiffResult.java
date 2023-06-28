@@ -1,8 +1,8 @@
 package hexlet.code;
 
 public class DiffResult {
-	private Object file1;
-	private Object file2;
+	private final Object file1;
+	private final Object file2;
 
 	public DiffResult(Object file1, Object file2) {
 		this.file1 = file1;
