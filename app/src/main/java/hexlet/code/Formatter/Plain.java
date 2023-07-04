@@ -9,7 +9,7 @@ public class Plain {
     public static String formatPlain(List<Map<String, Object>> comparison) {
         StringBuilder result = new StringBuilder();
         for (Map<String, Object> keyDiff: comparison) {
-            switch (keyDiff.get("status").toString()) {
+            switch (keyDiff.get("format").toString()) {
                 case "removed" -> result.append("Property ").append("'")
                         .append(keyDiff.get("key")).append("'").append(" was removed").append("\n");
                 case "added" -> result.append("Property ").append(complexValue(keyDiff.get("key")))
