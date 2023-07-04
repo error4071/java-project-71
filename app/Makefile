@@ -1,5 +1,5 @@
-run-dist:	
-	./build/install/app/bin/app src/test/resources/file1.json src/test/resources/file2.json
+run-dist:
+	./build/install/app/bin/app -f plain ./src/test/resources/json/file1.json ./src/test/resources/json/file2.json
 
 .DEFAULT_GOAL := build-run
 
