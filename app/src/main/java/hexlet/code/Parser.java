@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Map;
 
 public class Parser {
-    private static Map<String, Object> parser(String file) throws Exception {
+    public static Map<String, Object> parser(String file) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(file, new TypeReference<>() {
         });

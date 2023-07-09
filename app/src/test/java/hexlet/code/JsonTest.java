@@ -14,14 +14,14 @@ public class JsonTest {
     private static String defaultFormat;
     @BeforeAll
     public static void beforeAll() throws Exception {
-        File1 = "./src/test/resources/file1.json";
-        File2 = "./src/test/resources/file2.json";
+        File1 = "./src/test/resources/json/file1.json";
+        File2 = "./src/test/resources/json/file2.json";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
         defaultFormat = "stylish";
     }
     @Test
     public void jsonTest() throws Exception {
-        String result = Differ.generate(File1, File2, defaultFormat);
+        String result = Differ.generate(File1, File2, "stylish");
         assertThat(result).isEqualTo(correctResult);
     }
 }

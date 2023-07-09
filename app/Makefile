@@ -1,6 +1,3 @@
-run-dist:
-	./build/install/app/bin/app -f plain ./src/test/resources/json/file1.json ./src/test/resources/json/file2.json
-
 .DEFAULT_GOAL := build-run
 
 clean:
@@ -29,6 +26,7 @@ lint:
 
 update-deps:
 	./gradlew useLatestVersions
+
 
 build-run: build run
 
