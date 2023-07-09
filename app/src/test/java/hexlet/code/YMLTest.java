@@ -14,8 +14,8 @@ public class YMLTest {
     private static String defaultFormat;
     @BeforeAll
     public static void beforeAll() throws Exception {
-        File1yml = "./src/test/resources/file1.yml";
-        File2yml = "./src/test/resources/file2.yml";
+        File1yml = "./src/test/resources/json/file1.yml";
+        File2yml = "./src/test/resources/json/file2.yml";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
         defaultFormat = "stylish";
     }
