@@ -2,7 +2,7 @@
 
 1. "Stylish" Comparison.
 
-https://asciinema.org/a/cvyISjYqd0kDbz4o3ZssMSaqL
+[![asciicast](https://asciinema.org/a/cvyISjYqd0kDbz4o3ZssMSaqL.svg)](https://asciinema.org/a/cvyISjYqd0kDbz4o3ZssMSaqL)
 
 2. "Plain" Comparison
 
