@@ -6,4 +6,4 @@ https://asciinema.org/a/cvyISjYqd0kDbz4o3ZssMSaqL
 
 2. "Plain" Comparison
 
-<script async id="asciicast-ItE8t2j0sCCj3AszLDhpiH7gd" src="https://asciinema.org/a/ItE8t2j0sCCj3AszLDhpiH7gd.js"></script>
+[![asciicast](https://asciinema.org/a/ItE8t2j0sCCj3AszLDhpiH7gd.svg)](https://asciinema.org/a/ItE8t2j0sCCj3AszLDhpiH7gd)
