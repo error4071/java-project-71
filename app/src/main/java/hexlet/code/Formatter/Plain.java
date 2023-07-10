@@ -14,8 +14,10 @@ public class Plain {
         String result = "\n";
         for (String key: keysFromFile) {
 
-        if (Objects.equals(file1.get(key), file2.get(key))) {
-            result += String.format("") + "\n";
+        if (!Objects.equals(file1.get(key), file2.get(key))) {
+            String key1 = complexValue(file1.get(key));
+            String key2 = complexValue(file2.get(key));
+            result += String.format("Property '" + key + "' was updated. From " + key1 + " to " + key2) + "\n";
         } else if (!file1.containsKey(key) && (file2.containsKey((key)))) {
             String key1 = complexValue(file1.get(key));
             String key2 = complexValue(file2.get(key));
