@@ -12,7 +12,8 @@ public class Format {
         switch (format) {
             case "stylish":
                 return Stylish.formatStylish(file1, file2, format);
-
+            case "plain":
+                return Plain.formatPlain(file1, file2, format);
             default:
                 throw new Error("Unknown format: " + format);
         }

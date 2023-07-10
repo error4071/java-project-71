@@ -1,43 +1,48 @@
 package hexlet.code.Formatter;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.TreeSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.Map;
 
 public class Plain {
-    public static String formatPlain(List<Map<String, Object>> comparison) {
-        StringBuilder result = new StringBuilder();
-        for (Map<String, Object> keyDiff: comparison) {
-            switch (keyDiff.get("format").toString()) {
-                case "removed" -> result.append("Property ").append("'")
-                        .append(keyDiff.get("key")).append("'").append(" was removed").append("\n");
-                case "added" -> result.append("Property ").append(complexValue(keyDiff.get("key")))
-                        .append(" was added with value: ")
-                        .append(complexValue(keyDiff.get("newValue")))
-                        .append("\n");
-                case "updated" ->
-                        result.append("Property ").append(complexValue(keyDiff.get("key")))
-                                .append(" was updated. From ")
-                                .append(complexValue(keyDiff.get("oldValue"))).append(" to ")
-                                .append(complexValue(keyDiff.get("newValue")))
-                                .append("\n");
+    public static String formatPlain(Map<String, Object> file1, Map<String, Object> file2, String format) throws Exception {
 
-                default -> result.append("");
-            }
+        Set<String> keysFromFile = new TreeSet<>(file1.keySet());
+        keysFromFile.addAll(file2.keySet());
+
+        String result = "\n";
+        for (String key: keysFromFile) {
+
+        if (Objects.equals(file1.get(key), file2.get(key))) {
+            result += String.format("") + "\n";
+        } else if (!file1.containsKey(key) && (file2.containsKey((key)))) {
+            String key1 = complexValue(file1.get(key));
+            String key2 = complexValue(file2.get(key));
+            result += String.format("Property '" + key + "' was updated. From " + key1 + " to " + key2) + "\n";
+        } else if (file1.containsKey(key) && (!file2.containsKey(key))) {
+            result += String.format("Property '" + key + "' was removed") + "\n";
+        } else if (!file1.containsKey(key) && (file2.containsKey((key)))) {
+            String value = complexValue(file2.get(key));
+            result += String.format("Property '" + key + "' was added with value: " + value) + "\n";
         }
-        return result.toString().trim();
     }
+    return result.toString();
+}
+    public static String complexValue(Object value) {
 
-    public static String complexValue(Object data) {
-        if (data instanceof Object[] || data instanceof Collections || data instanceof Map
-                || data instanceof ArrayList<?>) {
-            return "[complex value]";
-        } else if (data instanceof String) {
-            return "'" + data + "'";
-        } else if (data == null) {
+        if (value == null) {
             return null;
+        } else if (value instanceof String) {
+            return "'" + value + "'";
         }
-        return data.toString();
+        String stringValue = value.toString();
+        boolean isComplexValue = (stringValue.startsWith("[") && stringValue.endsWith("]"))
+                || (stringValue.startsWith("{") && stringValue.endsWith("}"));
+
+        if (isComplexValue) {
+            stringValue = "[complex value]";
+        }
+        return stringValue;
     }
 }
