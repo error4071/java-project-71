@@ -22,7 +22,7 @@ public class PlainTest {
     }
     @Test
     public void jsonTest() throws Exception {
-        String result = Differ.generate(File1, File2, "stylish");
+        String result = Differ.generate(File1, File2, "plain");
         assertThat(result).isEqualTo(PlainCorrectResult);
     }
 
