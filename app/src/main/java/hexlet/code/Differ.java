@@ -2,8 +2,6 @@ package hexlet.code;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hexlet.code.Formatter.Plain;
-import hexlet.code.Formatter.Stylish;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,12 +9,6 @@ import java.nio.file.Paths;
 import java.util.Map;
 
 public class Differ {
-
-    public static final String STATUS_NOT_CHANGED = "not changed";
-    public static final String STATUS_CHANGED = "changed";
-    public static final String STATUS_DELETED = "deleted";
-    public static final String STATUS_ADDED = "added";
-
     public static String generate(String filePath1, String filePath2, String format) throws Exception {
 
         Path getFile1 = Paths.get(filePath1);
@@ -34,11 +26,5 @@ public class Differ {
         });
 
         return Format.formatStyle(file1, file2, format);
-    }
-
-        public static Map<String, String> genDiff(Map<String, Object> file1, Map<String, Object> file2, String format) throws Exception {
-            Map<String, String> diffMap = genDiff(file1, file2, format);
-
-            return genDiff(file1, file2, format);
     }
 }

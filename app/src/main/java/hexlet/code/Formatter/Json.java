@@ -1,12 +1,11 @@
 package hexlet.code.Formatter;
 
-import hexlet.code.DiffResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
-
+import java.util.Map;
 public class Json {
-    public static String format(List<DiffResult> formedList) throws Exception {
+    public static String formatJson(List<Map<String, Object>> formedList) throws Exception {
 
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(formedList);

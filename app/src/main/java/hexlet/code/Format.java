@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.Formatter.Json;
 import hexlet.code.Formatter.Plain;
 import hexlet.code.Formatter.Stylish;
 
