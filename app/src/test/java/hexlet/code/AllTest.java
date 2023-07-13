@@ -45,7 +45,7 @@ public class AllTest {
     }
     @Test
     public void jsonTest2() throws Exception {
-        String result = Differ.generate(File1, File2, defaultFormat);
+        String result = Differ.generate(File1, File2, "json");
         assertThat(result).isEqualTo(JsonCorrectResult);
     }
 }
