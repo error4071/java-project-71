@@ -15,6 +15,8 @@ public class Format {
                 return Stylish.formatStylish(file1, file2, format);
             case "plain":
                 return Plain.formatPlain(file1, file2, format);
+            case "json":
+                return Json.formatJson(file1, file2, format);
             default:
                 throw new Error("Unknown format: " + format);
         }

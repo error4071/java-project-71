@@ -14,6 +14,7 @@ public class AllTest {
     private static String File2yml;
     private static String correctResult;
     private static String PlainCorrectResult;
+    private static String JsonCorrectResult;
     private static String defaultFormat;
 
     @BeforeAll
@@ -24,6 +25,7 @@ public class AllTest {
         File2yml = "./src/test/resources/yml/file2.yml";
         correctResult = Files.readString(Paths.get("./src/test/resources/correctResult"));
         PlainCorrectResult = Files.readString(Paths.get("./src/test/resources/PlainCorrectResult"));
+        JsonCorrectResult = Files.readString(Paths.get("./src/test/resources/JsonCorrectResult"));
         defaultFormat = "stylish";
     }
     @Test
@@ -40,5 +42,10 @@ public class AllTest {
     public void plainTest() throws Exception {
         String result = Differ.generate(File1, File2, "plain");
         assertThat(result).isEqualTo(PlainCorrectResult);
+    }
+    @Test
+    public void jsonTest2() throws Exception {
+        String result = Differ.generate(File1, File2, defaultFormat);
+        assertThat(result).isEqualTo(JsonCorrectResult);
     }
 }
